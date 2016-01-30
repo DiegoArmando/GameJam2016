@@ -4,6 +4,7 @@ using System.Collections;
 public class Move : MonoBehaviour {
 
 	float speed;
+	public bool running = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,9 +15,13 @@ public class Move : MonoBehaviour {
 	void Update () {
 	
 		speed = 2.0f;
-		if(Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetKey (KeyCode.LeftShift)) {
+			speed *= 2.0f;
+			running = true;
+		}
+		else
 		{
-				speed *= 2.0f;
+			running = false;
 		}
 
 		if (Input.GetKey (KeyCode.A)) {
