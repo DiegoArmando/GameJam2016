@@ -20,8 +20,9 @@ public class Overlap : MonoBehaviour {
 		overlap = true;
 	}
 
-	void OnTriggerLeave2D()
+	void OnTriggerExit2D()
 	{
+		print ("LEAFT THE TROOGER");
 		overlap = false;
 	}
 

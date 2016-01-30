@@ -33,5 +33,6 @@ public class PoleBehavior : MonoBehaviour {
 	{
 		held = false;
 		transform.position = initialPos;
+		sprite.sortingLayerName = "Interactable";
 	}
 }
