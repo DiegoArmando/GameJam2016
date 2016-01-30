@@ -6,6 +6,8 @@ public class Move : MonoBehaviour {
 	float speed;
 	public bool running = false;
 	public GameObject pole;
+	public GameObject poleHome;
+	public 
 
 	// Use this for initialization
 	void Start () {
@@ -41,13 +43,30 @@ public class Move : MonoBehaviour {
 			this.gameObject.transform.position -= new Vector3(0, speed, 0) * Time.deltaTime;
 		}
 
-		if(Input.GetKey(KeyCode.Space))
+		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			if(GetComponent<BoxCollider2D>().IsTouching(pole.GetComponent<BoxCollider2D>()))
-			{
 
+			if (poleHome.GetComponent<Overlap>().overlap)
+			{
+				if (pole.GetComponent<PoleBehavior> ().held)
+				{
+					print ("We should be putting down the pole now");
+					pole.SendMessage ("PutDown");
+				}
+				else
+				{
+					pole.SendMessage ("PickUp");
+				}
 			}
+
+
+
+
+
+
 		}
+
+
 
 	}
 }
