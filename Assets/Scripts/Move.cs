@@ -6,6 +6,7 @@ public class Move : MonoBehaviour {
 	float speed;
 	public bool running = false;
 	bool holding = false;
+    public GameObject Priest;
 
 	public GameObject pole;
 	public GameObject poleHome;
@@ -208,7 +209,7 @@ public class Move : MonoBehaviour {
 			if (organ.GetComponent<Overlap>().overlap)
 			{
 				GetComponent<AudioSource> ().Play (0);
-				//AudioSource.PlayClipAtPoint( new AudioClip(
+                Priest.SendMessage("InterruptExternal", "organ.txt");
 			}
 
 			if (candle1.GetComponent<Overlap> ().overlap)

@@ -70,6 +70,11 @@ public class Priest : MonoBehaviour {
 		StartCoroutine(InterruptScript(phase + interruptions[phase] + ".txt"));
     }
 
+    void InterruptExternal(string scriptFile)
+    {
+        StartCoroutine(InterruptScript(scriptFile));
+    }
+
     IEnumerator InterruptScript(string scriptFile)
     {
         StreamReader reader = new StreamReader("assets\\" + scriptFile, Encoding.Default);
