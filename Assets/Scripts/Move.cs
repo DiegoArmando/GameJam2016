@@ -25,6 +25,13 @@ public class Move : MonoBehaviour {
 	public GameObject pish;
 	public GameObject heldPish;
 
+	public GameObject bop1;
+	public GameObject bop2;
+	public GameObject bop3;
+	public GameObject bop4;
+	public GameObject bop5;
+	public GameObject bop6;
+
 	float timer = 4.0f;
 	bool waiting = false;
 
@@ -126,7 +133,7 @@ public class Move : MonoBehaviour {
 						candlesLit = true;
 					}
 
-					if (!candle1.GetComponent<Candle> ().lit && !candle2.GetComponent<Candle> ().lit && !candle3.GetComponent<Candle> ().lit && !candle4.GetComponent<Candle> ().lit && fishFed) 
+					if (!candle1.GetComponent<Candle> ().lit && !candle2.GetComponent<Candle> ().lit && !candle3.GetComponent<Candle> ().lit && !candle4.GetComponent<Candle> ().lit && peopleBopped) 
 					{
 						candlesUnlit = true;
 					}
@@ -214,6 +221,11 @@ public class Move : MonoBehaviour {
 			if (readPlace.GetComponent<Overlap>().overlap && book.GetComponent<PoleBehavior>().held && candlesLit) 
 			{
 				waiting = true;
+			}
+
+			if (bop1.GetComponent<Overlap> ().overlap && pish.GetComponent<PoleBehavior> ().held)
+			{
+
 			}
 
 		}
