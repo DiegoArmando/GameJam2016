@@ -7,7 +7,6 @@ public class PoleBehavior : MonoBehaviour {
 	Vector3 initialPos;
 	public bool held = false;
 
-
 	private SpriteRenderer sprite;
 
 	// Use this for initialization

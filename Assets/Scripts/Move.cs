@@ -17,6 +17,7 @@ public class Move : MonoBehaviour {
 
 	public GameObject food;
 	public GameObject foodSpot;
+	public GameObject foodHome;
 	public GameObject book;
 	public GameObject bookHome;
 	public GameObject readPlace;
@@ -30,7 +31,11 @@ public class Move : MonoBehaviour {
 	//public GameObject candle1;
 	//public 
 
+	bool candlesLit = false;
+	bool bookRead = false;
 	bool fishFed = false;
+	bool peopleBopped = false;
+	bool candlesUnlit = false;
 
 	// Use this for initialization
 	void Start () {
@@ -40,11 +45,17 @@ public class Move : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (candlesUnlit) {
+			//End the game
+		}
+
 		if (waiting)
 			timer -= Time.deltaTime;
 	
-		if (timer <= 0)
+		if (timer <= 0) {
 			waiting = false;
+			bookRead = true;
+		}
 
 		if (transform.position.y > 2.9)
 		{
@@ -55,7 +66,7 @@ public class Move : MonoBehaviour {
 			GetComponent<SpriteRenderer>().sortingLayerName = "People";
 		}
 
-		speed = 2.0f;
+		speed = 5.0f;
 		if (Input.GetKey (KeyCode.LeftShift)) {
 			speed *= 2.0f;
 			running = true;
@@ -110,6 +121,15 @@ public class Move : MonoBehaviour {
 					//print ("We should be putting down the pole now");
 					pole.SendMessage ("PutDown");
 					holding = false;
+					if (candle1.GetComponent<Candle> ().lit && candle2.GetComponent<Candle> ().lit && candle3.GetComponent<Candle> ().lit && candle4.GetComponent<Candle> ().lit) 
+					{
+						candlesLit = true;
+					}
+
+					if (!candle1.GetComponent<Candle> ().lit && !candle2.GetComponent<Candle> ().lit && !candle3.GetComponent<Candle> ().lit && !candle4.GetComponent<Candle> ().lit && fishFed) 
+					{
+						candlesUnlit = true;
+					}
 				}
 				else
 				{
@@ -156,14 +176,15 @@ public class Move : MonoBehaviour {
 				}
 			}
 
-			if (food.GetComponent<Overlap> ().overlap) 
-			{
-				food.SendMessage ("PickUp");
-				holding = true;
-			}
 
 			if (!fishFed) {
-				if (foodSpot.GetComponent<Overlap> ().overlap && food.GetComponent<PoleBehavior> ().held) {
+				if (foodHome.GetComponent<Overlap> ().overlap && holding == false) 
+				{
+					food.SendMessage ("PickUp");
+					holding = true;
+				}
+
+				if (foodSpot.GetComponent<Overlap> ().overlap && food.GetComponent<PoleBehavior> ().held && bookRead) {
 					fishFed = true;
 					Destroy (food);
 					print ("FFFFEEEED THE FEEEEESH");
@@ -190,7 +211,7 @@ public class Move : MonoBehaviour {
 
 			}
 
-			if (readPlace.GetComponent<Overlap>().overlap && book.GetComponent<PoleBehavior>().held) 
+			if (readPlace.GetComponent<Overlap>().overlap && book.GetComponent<PoleBehavior>().held && candlesLit) 
 			{
 				waiting = true;
 			}
