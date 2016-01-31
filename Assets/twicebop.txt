@@ -1,0 +1,7 @@
+<rate 2>
+yOu knOW yOu shOUlD oNLY bop TheM oNCE!
+<colr 1,0,0>
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>

@@ -1,0 +1,7 @@
+<colr 1,0,0>
+<rate 5>
+reTURn thE Eucharfish to ItS PooL, nOW.
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>

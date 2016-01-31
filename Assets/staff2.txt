@@ -1,0 +1,7 @@
+<colr 1,0,0>
+<rate 3>
+tHE EmuncTorium, if yoU PleASE.
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>

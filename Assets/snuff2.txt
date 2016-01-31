@@ -1,0 +1,7 @@
+<colr 1,0,0>
+<rate 5>
+sNuFF the CaNDlEs.
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>

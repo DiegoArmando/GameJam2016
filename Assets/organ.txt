@@ -1,0 +1,129 @@
+<rate 2>
+IT IS NOT YOUR PLACE TO PLAY THAT
+<colr 0.177,0.394,0.416>
+<wait 1>
+YOU ARE NOT AN ORGANIST AND YOU KNOW IT
+<colr 0.621,0.361,0.987>
+<wait 1>
+WHAT DO YOU THINK YOU ARE,
+<colr 0.447,0.143,0.684>
+<wait 1>
+SOME KIND OF MODERN RICK WAKEMAN?
+<colr 0.641,0.736,0.919>
+<wait 1>
+YOU ARE HERE TO PERFORM YOUR DUTIES
+<colr 0.612,0.477,0.521>
+<wait 1>
+AND THAT IS NOT ONE OF THEM
+<colr 0.088,0.388,0.446>
+<wait 1>
+I DON'T THINK YOU COULD HANDLE THE
+<colr 0.445,0.054,0.286>
+<wait 1>
+ORGAN EVEN IF YOU TRIED YOUR HARDEST
+<colr 0.217,0.926,0.001>
+<wait 1>
+DO YOU KNOW HOW MUCH PRACTICE THAT
+<colr 0.360,0.536,0.473>
+<wait 1>
+THING TAKES? IT'S BEYOND YOUR STATION!
+<colr 0.494,0.857,0.321>
+<wait 1>
+NOT ONLY THAT, YOU'RE ANNOYING THE
+<colr 0.549,0.010,0.924>
+<wait 1>
+PARISHIONERS! THEY WANT NONE OF THESE SHENANIGANS
+<colr 0.624,0.894,0.369>
+<wait 1>
+DO YOU REALLY THINK THAT THEY WANT
+<colr 0.026,0.201,0.856>
+<wait 1>
+TO HEAR YOU HAMMERING AWAY ON THAT THING?
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<colr 1,0,0>
+<colr 0,1,0>
+<colr 0,0,1>
+<wait 1>

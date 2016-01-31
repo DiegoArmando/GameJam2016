@@ -1,0 +1,29 @@
+<colr 0,0,0>
+<rate 10>
+Our crawdad which art in ocean
+<wait 5>
+Shallowed be thy name
+<wait 5>
+Thy sea floor come
+<wait 5>
+Thy swells be done
+<wait 5>
+On land as it is in ocean
+<wait 5>
+Give us this day our daily krill
+<wait 5>
+And forgive us our wake
+<wait 5>
+As we forgive our wakers
+<wait 5>
+Lead us not into anglerfish
+<wait 5>
+But deliver us from nets
+<wait 5>
+For thine is the sea floor
+<wait 5>
+The trenches
+<wait 5>
+And the  current
+<wait 5>
+Amen.
