@@ -6,6 +6,7 @@ using System.IO;
 public class Priest : MonoBehaviour {
     public GameObject TextBox;
     private bool interrupted = false;
+    public GameObject Player;
 
 	// Use this for initialization
 	void Start () {
@@ -46,6 +47,27 @@ public class Priest : MonoBehaviour {
         return new WaitForSeconds(waitTime);
     }
 
+    public System.Collections.Generic.Dictionary<string, int> interruptions = new System.Collections.Generic.Dictionary<string, int>();
+
+    void Interrupt(string phase)
+    {
+        if (phase == "staff2")
+        {
+            phase = "staff";
+            interruptions["staff"] = 0;
+        }
+        if (interruptions.ContainsKey(phase))
+        {
+            interruptions[phase]++;
+        }
+        else
+        {
+            interruptions[phase] = 1;
+        }
+        if (interruptions[phase] > 3) interruptions[phase] = 3;
+        InterruptScript(phase + interruptions[phase] + ".txt");
+    }
+
     IEnumerator InterruptScript(string scriptFile)
     {
         StreamReader reader = new StreamReader("assets\\" + scriptFile, Encoding.Default);
@@ -83,9 +105,85 @@ public class Priest : MonoBehaviour {
             }
         } while (line != null);
     }
-    
+
+    public float timer = 7f;
 	// Update is called once per frame
 	void Update () {
-	
+        timer -= Time.deltaTime;
+        if (timer <= 0f)
+        {
+            timer = 7f;
+            if (!Player.GetComponent<Move>().candlesLit)
+            {
+                if (!Player.GetComponent<Move>().pole.GetComponent<PoleBehavior>().held)
+                {
+                    Interrupt("staff");
+                }
+                else
+                {
+                    Interrupt("light");
+                }
+            }
+            else //candles are lit
+            {
+                if (!Player.GetComponent<Move>().bookRead)
+                {
+                    if (!Player.GetComponent<Move>().book.GetComponent<PoleBehavior>().held)
+                    {
+                        Interrupt("book");
+                    }
+                    else
+                    {
+                        Interrupt("read");
+                    }
+                }
+                else //book is read
+                {
+                    if (!Player.GetComponent<Move>().fishFed)
+                    {
+                        if (!Player.GetComponent<Move>().food.GetComponent<PoleBehavior>().held)
+                        {
+                            Interrupt("food");
+                        }
+                        else
+                        {
+                            Interrupt("feed");
+                        }
+                    }
+                    else //fish is fed
+                    {
+                        if (!Player.GetComponent<Move>().peopleBopped)
+                        {
+                            Interrupt("bop");
+                        }
+                        else //people are bopped
+                        {
+                            if (Player.GetComponent<Move>().heldPish.GetComponent<PoleBehavior>().held)
+                            {
+                                Interrupt("pool");
+                            }
+                            else //fish is returned
+                            {
+                                if (!Player.GetComponent<Move>().candlesUnlit)
+                                {
+                                    if (!Player.GetComponent<Move>().pole.GetComponent<PoleBehavior>().held)
+                                    {
+                                        Interrupt("staff2");
+                                    }
+                                    else
+                                    {
+                                        Interrupt("snuff");
+                                    }
+                                }
+                                else //candles are snuffed
+                                {
+                                    //win state
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 	}
 }

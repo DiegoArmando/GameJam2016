@@ -38,11 +38,11 @@ public class Move : MonoBehaviour {
 	//public GameObject candle1;
 	//public 
 
-	bool candlesLit = false;
-	bool bookRead = false;
-	bool fishFed = false;
-	bool peopleBopped = false;
-	bool candlesUnlit = false;
+	public bool candlesLit = false;
+    public bool bookRead = false;
+    public bool fishFed = false;
+    public bool peopleBopped = false;
+    public bool candlesUnlit = false;
 
 	// Use this for initialization
 	void Start () {
