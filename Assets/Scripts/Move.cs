@@ -49,6 +49,13 @@ public class Move : MonoBehaviour {
 	public GameObject bopSprite;
 	Sprite originalFish;
 
+	Sprite origBop1;
+	Sprite origBop2;
+	Sprite origBop3;
+	Sprite origBop4;
+	Sprite origBop5;
+	Sprite origBop6;
+
 	float bopTimer = 0.34f;
 	bool bopping = false;
 
@@ -69,6 +76,12 @@ public class Move : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		originalFish = heldPish.GetComponent<SpriteRenderer> ().sprite;
+		origBop1 = boppee1.GetComponent<SpriteRenderer> ().sprite;
+		origBop2 = boppee2.GetComponent<SpriteRenderer> ().sprite;
+		origBop3 = boppee3.GetComponent<SpriteRenderer> ().sprite;
+		origBop4 = boppee4.GetComponent<SpriteRenderer> ().sprite;
+		origBop5 = boppee5.GetComponent<SpriteRenderer> ().sprite;
+		origBop6 = boppee6.GetComponent<SpriteRenderer> ().sprite;
 	}
 	
 	// Update is called once per frame
@@ -259,6 +272,12 @@ public class Move : MonoBehaviour {
 				pish.GetComponent<SpriteRenderer> ().enabled = true;
 				holding = true;
 
+				boppee1.GetComponent<SpriteRenderer> ().sprite = origBop1;
+				boppee2.GetComponent<SpriteRenderer> ().sprite = origBop2;
+				boppee3.GetComponent<SpriteRenderer> ().sprite = origBop3;
+				boppee4.GetComponent<SpriteRenderer> ().sprite = origBop4;
+				boppee5.GetComponent<SpriteRenderer> ().sprite = origBop5;
+				boppee6.GetComponent<SpriteRenderer> ().sprite = origBop6;
 			}
 
 			if (bookHome.GetComponent<Overlap> ().overlap) 
@@ -335,6 +354,8 @@ public class Move : MonoBehaviour {
 
 	bool checkBop()
 	{
-		return (bop1.GetComponent<Overlap> ().bopped && bop2.GetComponent<Overlap> ().bopped && bop3.GetComponent<Overlap> ().bopped && bop5.GetComponent<Overlap> ().bopped && bop6.GetComponent<Overlap> ().bopped);
+		bool result = (bop1.GetComponent<Overlap> ().bopped && bop2.GetComponent<Overlap> ().bopped && bop3.GetComponent<Overlap> ().bopped && bop5.GetComponent<Overlap> ().bopped && bop6.GetComponent<Overlap> ().bopped);
+
+		return result;
 	}
 }
