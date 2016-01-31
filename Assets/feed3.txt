@@ -2,6 +2,7 @@
 the Eucharfish.
 <colr 0.5,1,1>
 <wait 5>
+<rate 10>
 ...AHEm.
 <colr 0,0,0>
 <wait 1>

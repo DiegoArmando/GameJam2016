@@ -2,6 +2,7 @@
 <rate 4>
 PleASE, rEMAiN reSPecFUl and Do Not rUN.
 <wait 5>
+<rate 10>
 ...AHEm.
 <colr 0,0,0>
 <wait 1>

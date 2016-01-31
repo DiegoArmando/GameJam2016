@@ -66,17 +66,13 @@ public class Priest : MonoBehaviour {
             interruptions[phase] = 1;
         }
         if (interruptions[phase] > 3) interruptions[phase] = 3;
-		print ("boop");
-		print ("What we are sending: " + phase + interruptions [phase] + ".txt");
+        if (interruptions[phase] >= 2) gameObject.SendMessage("showPointers", phase);        
 		StartCoroutine(InterruptScript(phase + interruptions[phase] + ".txt"));
-		print ("post boopism");
     }
 
     IEnumerator InterruptScript(string scriptFile)
     {
-		print ("Does streamreader brok everythinangds?");
         StreamReader reader = new StreamReader("assets\\" + scriptFile, Encoding.Default);
-		print ("inside interrupt with script " + scriptFile);
         string line = "";
 		if (!interrupted)
 		{
@@ -90,6 +86,7 @@ public class Priest : MonoBehaviour {
 				}
 				yield return 0;
 			} while (line != null);
+            gameObject.SendMessage("hideAll");
 			interrupted = false;
 			timer = 7f;
 		}

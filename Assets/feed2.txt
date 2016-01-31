@@ -2,6 +2,7 @@
 <rate 3>
 the Eucharfish nEEds to BE fED.
 <wait 5>
+<rate 10>
 ...AHEm.
 <colr 0,0,0>
 <wait 1>

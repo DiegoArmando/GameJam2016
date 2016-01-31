@@ -2,6 +2,7 @@
 No! ThAT Is noT a membER oF OUr cONgrEGatION!
 <colr 1,0,0>
 <wait 5>
+<rate 10>
 ...AHEm.
 <colr 0,0,0>
 <wait 1>

@@ -2,6 +2,7 @@
 tHE CaNDlEs.
 <colr 0,0.2,0.4>
 <wait 5>
+<rate 10>
 ...AHEm.
 <colr 0,0,0>
 <wait 1>
