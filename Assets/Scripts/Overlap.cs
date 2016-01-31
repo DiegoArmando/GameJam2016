@@ -4,6 +4,7 @@ using System.Collections;
 public class Overlap : MonoBehaviour {
 
 	public bool overlap = false;
+	public bool bopped = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class Overlap : MonoBehaviour {
 
 	void OnTriggerExit2D()
 	{
-		print ("LEAFT THE TROOGER");
+		//print ("LEAFT THE TROOGER");
 		overlap = false;
 	}
 

@@ -185,8 +185,7 @@ public class Move : MonoBehaviour {
 
 
 			if (!fishFed) {
-				if (foodHome.GetComponent<Overlap> ().overlap && holding == false) 
-				{
+				if (foodHome.GetComponent<Overlap> ().overlap && holding == false) {
 					food.SendMessage ("PickUp");
 					holding = true;
 				}
@@ -201,6 +200,12 @@ public class Move : MonoBehaviour {
 					heldPish.GetComponent<PoleBehavior> ().SendMessage ("PickUp");
 
 				}
+			} else if (foodSpot.GetComponent<Overlap> ().overlap && heldPish.GetComponent<PoleBehavior> ().held && peopleBopped) 
+			{
+				heldPish.SendMessage ("PutDown");
+				pish.GetComponent<SpriteRenderer> ().enabled = true;
+				holding = true;
+
 			}
 
 			if (bookHome.GetComponent<Overlap> ().overlap) 
@@ -223,14 +228,50 @@ public class Move : MonoBehaviour {
 				waiting = true;
 			}
 
-			if (bop1.GetComponent<Overlap> ().overlap && pish.GetComponent<PoleBehavior> ().held)
+			if (bop1.GetComponent<Overlap> ().overlap && heldPish.GetComponent<PoleBehavior> ().held)
 			{
+				bop1.GetComponent<Overlap> ().bopped = true;
+				peopleBopped = checkBop ();
+			}
 
+			if (bop2.GetComponent<Overlap> ().overlap && heldPish.GetComponent<PoleBehavior> ().held)
+			{
+				bop2.GetComponent<Overlap> ().bopped = true;
+				peopleBopped = checkBop ();
+			}
+
+			if (bop3.GetComponent<Overlap> ().overlap && heldPish.GetComponent<PoleBehavior> ().held)
+			{
+				bop3.GetComponent<Overlap> ().bopped = true;
+				peopleBopped = checkBop ();
+			}
+
+			if (bop4.GetComponent<Overlap> ().overlap && heldPish.GetComponent<PoleBehavior> ().held)
+			{
+				bop4.GetComponent<Overlap> ().bopped = true;
+				//peopleBopped = checkBop ();
+			}
+
+			if (bop5.GetComponent<Overlap> ().overlap && heldPish.GetComponent<PoleBehavior> ().held)
+			{
+				bop5.GetComponent<Overlap> ().bopped = true;
+				peopleBopped = checkBop ();
+			}
+
+			if (bop6.GetComponent<Overlap> ().overlap && heldPish.GetComponent<PoleBehavior> ().held)
+			{
+				bop6.GetComponent<Overlap> ().bopped = true;
+				peopleBopped = checkBop ();
 			}
 
 		}
 
 
 
+	}
+
+	bool checkBop()
+	{
+		return (bop1.GetComponent<Overlap> ().bopped && bop2.GetComponent<Overlap> ().bopped && bop3.GetComponent<Overlap> ().bopped && bop5.GetComponent<Overlap> ().bopped && bop6.GetComponent<Overlap> ().bopped);
 	}
 }
