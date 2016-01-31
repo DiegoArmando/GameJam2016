@@ -5,18 +5,28 @@ public class Move : MonoBehaviour {
 
 	float speed;
 	public bool running = false;
+	bool holding = false;
+
 	public GameObject pole;
 	public GameObject poleHome;
 	public GameObject organ;
 	public GameObject candle1;
 	public GameObject candle2;
 	public GameObject candle3;
+	public GameObject candle4;
 
 	public GameObject food;
 	public GameObject foodSpot;
+	public GameObject book;
+	public GameObject bookHome;
+	public GameObject readPlace;
 
 	public GameObject pish;
 	public GameObject heldPish;
+
+	float timer = 4.0f;
+	bool waiting = false;
+
 	//public GameObject candle1;
 	//public 
 
@@ -29,7 +39,22 @@ public class Move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (waiting)
+			timer -= Time.deltaTime;
 	
+		if (timer <= 0)
+			waiting = false;
+
+		if (transform.position.y > 2.9)
+		{
+			GetComponent<SpriteRenderer>().sortingLayerName = "Behind Stuff";
+		}
+		else 
+		{
+			GetComponent<SpriteRenderer>().sortingLayerName = "People";
+		}
+
 		speed = 2.0f;
 		if (Input.GetKey (KeyCode.LeftShift)) {
 			speed *= 2.0f;
@@ -42,18 +67,37 @@ public class Move : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.A)) {
 			this.gameObject.transform.position -= new Vector3(speed, 0, 0) * Time.deltaTime;
+			if (waiting) {
+				waiting = false;
+				//bug priest here
+			}
 		}
 
 		if (Input.GetKey (KeyCode.D)) {
 			this.gameObject.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+
+			if (waiting) {
+				waiting = false;
+				//bug priest here
+			}
 		}
 
 		if (Input.GetKey (KeyCode.W)) {
 			this.gameObject.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
+
+			if (waiting) {
+				waiting = false;
+				//bug priest here
+			}
 		}
 
 		if (Input.GetKey (KeyCode.S)) {
 			this.gameObject.transform.position -= new Vector3(0, speed, 0) * Time.deltaTime;
+
+			if (waiting) {
+				waiting = false;
+				//bug priest here
+			}
 		}
 
 		if(Input.GetKeyDown(KeyCode.Space))
@@ -65,10 +109,12 @@ public class Move : MonoBehaviour {
 				{
 					//print ("We should be putting down the pole now");
 					pole.SendMessage ("PutDown");
+					holding = false;
 				}
 				else
 				{
 					pole.SendMessage ("PickUp");
+					holding = true;
 				}
 			}
 
@@ -102,9 +148,18 @@ public class Move : MonoBehaviour {
 				}
 			}
 
+			if (candle4.GetComponent<Overlap> ().overlap)
+			{
+				if (pole.GetComponent<PoleBehavior> ().held) 
+				{
+					candle4.SendMessage ("Action");
+				}
+			}
+
 			if (food.GetComponent<Overlap> ().overlap) 
 			{
 				food.SendMessage ("PickUp");
+				holding = true;
 			}
 
 			if (!fishFed) {
@@ -118,6 +173,26 @@ public class Move : MonoBehaviour {
 					heldPish.GetComponent<PoleBehavior> ().SendMessage ("PickUp");
 
 				}
+			}
+
+			if (bookHome.GetComponent<Overlap> ().overlap) 
+			{
+				if (book.GetComponent<PoleBehavior>().held) 
+				{
+					book.GetComponent<PoleBehavior>().SendMessage ("PutDown");
+					holding = false;
+				} 
+				else if(holding == false)
+				{
+					book.GetComponent<PoleBehavior>().SendMessage ("PickUp");
+					holding = true;
+				}
+
+			}
+
+			if (readPlace.GetComponent<Overlap>().overlap && book.GetComponent<PoleBehavior>().held) 
+			{
+				waiting = true;
 			}
 
 		}
