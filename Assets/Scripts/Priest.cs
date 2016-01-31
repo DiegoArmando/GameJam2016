@@ -68,7 +68,7 @@ public class Priest : MonoBehaviour {
 
     IEnumerator PriestScript()
     {
-        StreamReader reader = new StreamReader("assets\\wrongbop.txt", Encoding.Default);
+        StreamReader reader = new StreamReader("assets\\priest.txt", Encoding.Default);
         string line = "";
         do
         {

@@ -1,15 +1,29 @@
 <colr 0,0,0>
-<rate 5>
-Rate equals five in this instance
-<wait 3>
-<rate 4>
-For this line the rate is four
-<wait 3>
-<rate 3>
-and wouldn't you know it, here's three
-<wait 3>
-<rate 2>
-speeding up... rate is two
-<wait 3>
-<rate 1>
-rate is one! Super quick!
+<rate 10>
+Our crawdad which art in ocean
+<wait 5>
+Shallowed be thy name
+<wait 5>
+Thy sea floor come
+<wait 5>
+Thy swells be done
+<wait 5>
+On land as it is in ocean
+<wait 5>
+Give us this day our daily krill
+<wait 5>
+And forgive us our wake
+<wait 5>
+As we forgive our wakers
+<wait 5>
+Lead us not into anglerfish
+<wait 5>
+But deliver us from nets
+<wait 5>
+For thine is the sea floor
+<wait 5>
+The trenches
+<wait 5>
+And the  current
+<wait 5>
+Amen.
