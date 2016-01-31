@@ -1,0 +1,7 @@
+<rate 2>
+the fooD.
+<colr 0.2,1,0.2>
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>

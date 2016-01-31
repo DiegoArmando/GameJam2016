@@ -1,0 +1,7 @@
+<colr 1,0,0>
+<rate 5>
+now GrAB the Eucharfish's fooD.
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>

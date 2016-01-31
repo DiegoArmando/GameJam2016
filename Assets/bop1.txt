@@ -1,0 +1,7 @@
+<colr 1,0,0>
+<rate 5>
+pLEasE bOP the ParISHIonErS.
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>

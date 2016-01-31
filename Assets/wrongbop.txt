@@ -1,0 +1,7 @@
+<rate 2>
+No! ThAT Is noT a membER oF OUr cONgrEGatION!
+<colr 1,0,0>
+<wait 5>
+...AHEm.
+<colr 0,0,0>
+<wait 1>
